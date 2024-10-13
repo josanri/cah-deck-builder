@@ -14,16 +14,16 @@
   </section>
   <section id="configuration" class="print-hide">
     <h2 class="flex-row vertical-center gap-1">
-      <img src="assets/icons/settings_outline_icon.svg" />
+      <img height="24" width="24" src="assets/icons/settings_outline_icon.svg" />
       Configuration and sharing</h2>
     <div class="flex-col gap-1 print-hide">
       <div class="flex-row gap-1">
         <button class="dark-button flex-row justify-center vertical-center gap-1" (click)="onPrintClick()">
-          <img src="assets/icons/print_filled_icon.svg" />
+          <img height="24" width="24" src="assets/icons/print_filled_icon.svg" />
           Print
         </button>
         <button class="dark-button flex-row justify-center vertical-center gap-1" (click)="handleExportClick()">
-          <img src="assets/icons/save_outline_icon.svg" />
+          <img height="24" width="24" src="assets/icons/save_outline_icon.svg" />
           Download
         </button>
         <app-file-upload />
@@ -41,7 +41,7 @@
   </section>
   <section id="white-cards">
     <h2 class="print-hide flex-row vertical-center gap-1">
-      <img src="assets/icons/style_outline_icon.svg" />
+      <img height="24" width="24" src="assets/icons/style_outline_icon.svg" />
       White cards
     </h2>
     <div class="cards-container" [ngClass]="ngClassCards" [class.new-page-after]="this.whiteCards().length > 0">
@@ -53,7 +53,7 @@
   </section>
   <section id="black-cards">
     <h2 class="print-hide flex-row vertical-center gap-1">
-      <img src="assets/icons/style_filled_icon.svg" />
+      <img height="24" width="24" src="assets/icons/style_filled_icon.svg" />
       Black cards
     </h2>
     <div class="cards-container" [ngClass]="ngClassCards">
