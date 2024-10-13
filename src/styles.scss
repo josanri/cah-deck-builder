@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("./assets/fonts/Roboto-Regular.woff2");
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url("./assets/fonts/Roboto-Bold.woff2");
+}
 
 :root{
     --secondary-black: #2a2a2a;
@@ -22,7 +30,7 @@ body { margin: 0; font-family: Roboto}
 button {
     width: fit-content;
     font-size: 6mm;
-    font-weight: 600;
+    font-weight: 500;
     &.dark-button {
         color: white;
         background-color: black;
