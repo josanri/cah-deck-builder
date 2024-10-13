@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Card } from '@shared/card';
-import { CardColor } from '@shared/cardcolor';
-import { CardSize } from '@shared/cardsize';
+import { CardColor } from '@shared/card-color';
+import { CardSize } from '@shared/card-size';
 
 @Component({
   selector: 'app-card',
