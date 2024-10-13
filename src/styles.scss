@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+:root{
+    --secondary-black: #2a2a2a;
+    --secondary-light-gray: #cfcfcf;
+
+    --original-width: 63.5mm;
+    --original-height: 88mm;
+    --original-padding-size: 5mm;
+    --original-borders-size: 5mm;
+    --original-content-width: calc(var(--original-width) - var(--original-padding-size) - var(--original-borders-size));
+    --original-content-height: calc(var(--original-height) - var(--original-padding-size) - var(--original-borders-size));
+}
+
+* {
+    font-family: Roboto;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto}
+
+button {
+    width: fit-content;
+    font-size: 6mm;
+    font-weight: 600;
+    &.dark-button {
+        color: white;
+        background-color: black;
+        border: 1px black solid;
+        box-shadow: 4px 4px 0px var(--secondary-black);
+        &:hover:not([disabled]){
+            background-color: var(--secondary-black);
+        }
+    }
+
+    &.light-button {
+        color: black;
+        background-color: white;
+        border: 1px black solid;
+        box-shadow: 4px 4px 0px var(--secondary-black);
+        &:hover:not([disabled]) {
+            background-color: var(--secondary-light-gray);
+        }
+    }
+
+    border-radius: 2mm;
+    &[disabled] {
+        background-color: var(--secondary-light-gray);
+        color: #231f20;
+        cursor: not-allowed;
+    }
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+.gap{
+    &-1{
+        gap: 0.5rem;
+    }
+}
+
+
+.justify-center {
+    justify-content: center;
+}
+
+.vertical-center {
+    align-items: center;
+}
+
+.only-at-print {
+    display: none;
+}
+
+
+.cards{
+    &--sm {
+        & .card {
+            font-weight: 700;
+            font-size: 5mm;
+            width: 30mm;
+            height: 48mm;
+            padding: 3mm;
+            
+            & small {
+                font-size: 2.4mm;
+            }
+        }
+    }
+    
+    &--md {
+        & .card {
+            font-weight: 700;
+            font-size: 6mm;
+            width: 40mm;
+            height: var(--original-content-height);
+            padding: 3mm;
+            
+            & small {
+                font-size: 4mm;
+            }
+        }
+    }
+
+    &--l {
+        & .card {
+            font-weight: 700;
+            font-size: 7mm;
+            width: var(--original-content-width);
+            height: var(--original-content-height);
+            padding: var(--original-padding-size);
+            
+            & small {
+                font-size: 4mm;
+            }
+        }
+    }
+}
+
+@media print {
+    @page {
+        margin: 2mm;
+    }
+    
+    .print-hide {
+        display: none;
+    }
+
+    .only-at-print{
+        display: block;
+    }
+
+    .new-page-after {
+        break-after: page;
+    }
+}
+

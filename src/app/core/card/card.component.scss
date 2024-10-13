@@ -1,0 +1,49 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    break-inside: avoid-page;
+
+    border-collapse: collapse;
+    
+    &--white {
+        color: black;
+        background-color: white;
+        border: 0.2rem solid black;
+        &:hover {
+            background-color: white;
+        }
+
+        & button {
+            color: black;
+        }
+    }
+
+
+    &--black {
+        color: white;
+        background-color: #231f20;
+        border: 0.2rem solid white;
+        &:hover {
+            background-color: #2b2627;
+        }
+        
+        & button {
+            color: white;
+        }
+    }
+
+    &--footer {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 0.2rem;
+        text-align: end;
+    }
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}

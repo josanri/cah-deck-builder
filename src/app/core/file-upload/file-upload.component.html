@@ -1,0 +1,5 @@
+<button class="dark-button flex-row justify-center vertical-center gap-1" (click)="openFilePicker()">
+  <img src="assets/upload_outline_icon.svg" />
+  Upload
+</button>
+<input type="file" #fileInput style="display: none;" accept=".json" (change)="onFileSelected($event)" />

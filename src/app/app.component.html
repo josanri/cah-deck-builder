@@ -1,0 +1,78 @@
+<main class="main">
+  <h1 class="print-hide">An Unofficial Cards Against Humanity Builder</h1>
+  <section id="instructions" class="print-hide">
+    <h2>Instructions</h2>
+    Have fun creating the most absurd, or outrageous card combinations.
+    <ul>
+      <li>
+        <strong>Black Cards</strong>: These contain fill-in-the-blank statements or questions.
+      </li>
+      <li>
+        <strong>White Cards</strong>: These contain random phrases, words, or sentences.
+      </li>
+    </ul>
+  </section>
+  <section id="configuration" class="print-hide">
+    <h2 class="flex-row vertical-center gap-1">
+      <img src="assets/settings_outline_icon.svg" />
+      Configuration and sharing</h2>
+    <div class="flex-col gap-1 print-hide">
+      <div class="flex-row gap-1">
+        <button class="dark-button flex-row justify-center vertical-center gap-1" (click)="onPrintClick()">
+          <img src="assets/print_filled_icon.svg" />
+          Print
+        </button>
+        <button class="dark-button flex-row justify-center vertical-center gap-1" (click)="handleExportClick()">
+          <img src="assets/save_outline_icon.svg" />
+          Download
+        </button>
+        <app-file-upload />
+      </div>
+      <div class="flex-row gap-1">
+        <button class="dark-button" (click)="setCardSize(CARDSIZE.SM)" [disabled]="cardSize === CARDSIZE.SM">Set small
+          size</button>
+        <button class="dark-button" (click)="setCardSize(CARDSIZE.L)" [disabled]="cardSize === CARDSIZE.L">Set original
+          size</button>
+      </div>
+      <div class="flex-row gap-1">
+        <button class="light-button" (click)="handleClearLocallyClick()">Clear cards</button>
+      </div>
+    </div>
+  </section>
+  <section id="white-cards">
+    <h2 class="print-hide flex-row vertical-center gap-1">
+      <img src="assets/style_outline_icon.svg" />
+      White cards
+    </h2>
+    <div class="cards-container" [ngClass]="ngClassCards" [class.new-page-after]="this.whiteCards().length > 0">
+      <app-add-new-card [cardSize]="cardSize" [cardColor]="CARDCOLOR.WHITE" (addNewCard)="addWhiteCard()" />
+      @for (item of whiteCards(); track item.id) {
+        <app-card [card]="item" [cardColor]="CARDCOLOR.WHITE" (removeCard)="removeCardFromWhiteCards($event)" />
+      }
+    </div>
+  </section>
+  <section id="black-cards">
+    <h2 class="print-hide flex-row vertical-center gap-1">
+      <img src="assets/style_filled_icon.svg" />
+      Black cards
+    </h2>
+    <div class="cards-container" [ngClass]="ngClassCards">
+      <app-add-new-card [cardSize]="cardSize" [cardColor]="CARDCOLOR.BLACK" (addNewCard)="addBlackCard()" />
+      @for (item of blackCards(); track item.id) {
+        <app-card [card]="item" [cardColor]="CARDCOLOR.BLACK" (removeCard)="removeCardFromBlackCards($event)" />
+      }
+    </div>
+  </section>
+  <section id="license" class="print-hide">
+    <h2>License and warnings</h2>
+    <div class="license-warning">
+      <strong>Cards Against Humanity</strong> is a trademark of Cards Against Humanity, LLC. Cards Against Humanity is
+      distributed
+      under a Creative Commons BY-NC-SA 2.0 license.
+    </div>
+    <div class="font-warning">
+      The current web uses <strong>'Roboto'</strong> font due to Helvetica Neue license restrictions.
+    </div>
+  </section>
+</main>
+<router-outlet />

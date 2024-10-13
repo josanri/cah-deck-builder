@@ -1,0 +1,16 @@
+main {
+    margin: 5mm;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+@media print {
+    .print-hide {
+        display: none;
+    }
+}

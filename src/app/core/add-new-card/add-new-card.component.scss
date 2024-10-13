@@ -1,0 +1,38 @@
+.blank-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    &--white {
+        color: black;
+        background-color: white;
+        border: 0.2rem solid black;
+        &:hover {
+            background-color: rgb(248, 248, 248);
+        }
+
+        & button {
+            color: black;
+        }
+    }
+
+
+    &--black {
+        color: white;
+        background-color: #231f20;
+        border: 0.2rem solid white;
+        &:hover {
+            background-color: #2b2627;
+        }
+        
+        & button {
+            color: white;
+        }
+    }
+}
+
+@media print {
+    .print-hide {
+        display: none;
+    }
+}
