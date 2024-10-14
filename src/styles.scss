@@ -145,7 +145,7 @@ button {
     }
     
     .print-hide {
-        display: none;
+        display: none !important;
     }
 
     .only-at-print{
