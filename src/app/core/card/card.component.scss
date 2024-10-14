@@ -18,6 +18,12 @@
         & button {
             color: black;
         }
+
+        .delete-button {        
+            &:hover{
+                box-shadow: 3px 3px 0px #231f20;
+            }
+        }
     }
 
 
@@ -32,6 +38,13 @@
         & button {
             color: white;
         }
+
+        .delete-button {        
+            &:hover{
+                box-shadow: 3px 3px 0px gray;
+            }
+        }
+    
     }
 
     &--footer {
@@ -41,9 +54,18 @@
         gap: 0.2rem;
         text-align: end;
     }
-}
-
-button {
-    background-color: transparent;
-    border: none;
-}
+    
+    .delete-button {
+        background-color: transparent;
+        border: solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+    
+        &:hover{
+            translate: -3px -3px;
+        }
+    }
+}    
