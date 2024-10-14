@@ -9,8 +9,6 @@ main {
     flex-wrap: wrap;
 }
 
-@media print {
-    .print-hide {
-        display: none;
-    }
+#license {
+    padding-bottom: 24px;
 }
