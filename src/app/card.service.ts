@@ -1,5 +1,6 @@
 import { Injectable, signal } from '@angular/core';
-import { BLACK_CARD_DEFAULT_TEXT, Card, WHITE_CARD_DEFAULT_TEXT } from '@shared/card';
+import { BLACK_CARD_DEFAULT_TEXT, Card, cardsFromArray, WHITE_CARD_DEFAULT_TEXT } from '@shared/card';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,22 +12,14 @@ export class CardService {
   constructor() {
     const localWhiteCards = localStorage.getItem("whitecards");
     if (localWhiteCards) {
-      try{
-        this.whiteCards.set(JSON.parse(localWhiteCards));
-      } catch (error) {
-        this.initializeWhiteCards();
-      }
+      this.whiteCards.set(cardsFromArray(JSON.parse(localWhiteCards)));
     } else {
       this.initializeWhiteCards();
     }
 
     const localBlackCards = localStorage.getItem("blackcards");
     if (localBlackCards) {
-      try {
-        this.blackCards.set(JSON.parse(localBlackCards));
-      } catch (error) {
-        this.initializeBlackCards();
-      }
+      this.blackCards.set(cardsFromArray(JSON.parse(localBlackCards)));
     } else {
       this.initializeBlackCards();
     }
@@ -90,8 +83,8 @@ export class CardService {
 
   importFile(fileText: string) {
     const fileDict = JSON.parse(fileText);
-    this.whiteCards.set(fileDict["whitecards"]?? []);
-    this.blackCards.set(fileDict["blackCards"]?? []);
+    this.whiteCards.set(cardsFromArray(fileDict["whitecards"]));
+    this.blackCards.set(cardsFromArray(fileDict["blackcards"]));
   }
 
   saveToLocalhost(){
