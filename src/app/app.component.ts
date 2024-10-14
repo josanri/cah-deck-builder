@@ -19,7 +19,7 @@ import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Cards Against humanity Builder';
   cardSize = CardSize.L;
   destroyRef = inject(DestroyRef);
@@ -30,6 +30,13 @@ export class AppComponent {
 
   readonly CARDSIZE = CardSize;
   readonly CARDCOLOR = CardColor;
+
+  ngOnInit() {
+    const localSize = localStorage.getItem("size")
+    if (localSize) {
+      this.setCardSize(localSize as CardSize);
+    };
+  }
 
   get ngClassCards() {
     return {
@@ -44,6 +51,7 @@ export class AppComponent {
 
   setCardSize(cardSize: CardSize) {
     this.cardSize = cardSize;
+    localStorage.setItem("size", cardSize)
   }
 
   addWhiteCard() {
