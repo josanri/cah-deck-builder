@@ -1,0 +1,22 @@
+{
+    "TITLE": "An Unofficial Cards Against Humanity Builder",
+    "SMALL_DESCRIPTION": "Have fun creating the most absurd, or outrageous card combinations.",
+    "BLACK_CARDS": "Black Cards",
+    "BLACK_CARDS_DESCRIPTION": "These contain fill-in-the-blank statements or questions.",
+    "WHITE_CARDS": "White Cards",
+    "WHITE_CARDS_DESCRIPTION": "These contain random phrases, words, or sentences.",
+    "INSTRUCTIONS": "Instructions",
+    "PRINT": "Print",
+    "DOWNLOAD": "Download",
+    "UPLOAD": "Upload",
+    "SMALL_SIZE": "Set small size",
+    "ORIGINAL_SIZE": "Set original size",
+    "CLEAR": "Clear deck",
+    "ADD_NEW_CARD": "Click to add a new card",
+    "CHANGE_LANGUAGE": "Change to Spanish",
+    "CONFIGURATION_AND_SHARING": "Settings",
+    "LICENSE": "License",
+    "This is an example for white card.": "This is an example for white card.",
+    "This is an example for black card ____.": "This is an example for black card ____."
+}
+  

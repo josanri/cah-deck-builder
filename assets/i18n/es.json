@@ -1,0 +1,22 @@
+{
+    "TITLE": "Constructor de mazos de Cartas contra la Humanidad (no oficial)",
+    "SMALL_DESCRIPTION": "Diviértete creando las combinaciones de cartas más absurdas o rocambolescas.",
+    "BLACK_CARDS": "Cartas Negras",
+    "BLACK_CARDS_DESCRIPTION": "Contienen afirmaciones o preguntas para rellenar los espacios en blanco.",
+    "WHITE_CARDS": "Cartas Blancas",
+    "WHITE_CARDS_DESCRIPTION": "Contienen frases, palabras u oraciones aleatorias.",
+    "INSTRUCTIONS": "Instrucciones",
+    "PRINT": "Imprimir",
+    "DOWNLOAD": "Descargar",
+    "UPLOAD": "Subir",
+    "SMALL_SIZE": "Tamaño pequeño",
+    "ORIGINAL_SIZE": "Tamaño normal",
+    "CLEAR": "Limpiar",
+    "ADD_NEW_CARD": "Click para añadir ",
+    "CONFIGURATION_AND_SHARING": "Configuración",
+    "CHANGE_LANGUAGE": "Cambiar a inglés",
+    "LICENSE": "Licencia",
+    "This is an example for white card.": "Este es un ejemplo de carta blanca.",
+    "This is an example for black card ____.": "Este es un ejemplo de carta negra ____."
+
+}  
