@@ -1,48 +1,50 @@
 <main class="main">
-  <h1 class="print-hide">An Unofficial Cards Against Humanity Builder</h1>
+  <h1 class="print-hide">{{ "TITLE" | translate}}</h1>
   <section id="instructions" class="print-hide">
-    <h2>Instructions</h2>
-    Have fun creating the most absurd, or outrageous card combinations.
+    <h2>{{ "INSTRUCTIONS" | translate }}</h2>
+    {{ "SMALL_DESCRIPTION" | translate}}
     <ul>
       <li>
-        <strong>Black Cards</strong>: These contain fill-in-the-blank statements or questions.
+        <strong>{{ "BLACK_CARDS" | translate}}</strong>: {{ "BLACK_CARDS_DESCRIPTION" | translate}}
       </li>
       <li>
-        <strong>White Cards</strong>: These contain random phrases, words, or sentences.
+        <strong>{{ "WHITE_CARDS" | translate}}</strong>: {{ "WHITE_CARDS_DESCRIPTION" | translate}}
       </li>
     </ul>
   </section>
   <section id="configuration" class="print-hide">
     <h2 class="flex-row vertical-center gap-1">
       <img height="24" width="24" src="assets/icons/settings_outline_icon.svg" />
-      Configuration and sharing</h2>
+      {{ "CONFIGURATION_AND_SHARING" | translate}}</h2>
     <div class="flex-col gap-1 print-hide">
       <div class="flex-row gap-1">
         <button class="dark-button flex-row justify-center vertical-center gap-1" (click)="onPrintClick()">
           <img height="24" width="24" src="assets/icons/print_filled_icon.svg" />
-          Print
+          {{ "PRINT" | translate }}
         </button>
         <button class="dark-button flex-row justify-center vertical-center gap-1" (click)="handleExportClick()">
           <img height="24" width="24" src="assets/icons/save_outline_icon.svg" />
-          Download
+          {{ "DOWNLOAD" | translate }}
         </button>
+
         <app-file-upload />
       </div>
       <div class="flex-row gap-1">
-        <button class="dark-button" (click)="setCardSize(CARDSIZE.SM)" [disabled]="cardSize === CARDSIZE.SM">Set small
-          size</button>
-        <button class="dark-button" (click)="setCardSize(CARDSIZE.L)" [disabled]="cardSize === CARDSIZE.L">Set original
-          size</button>
+        <button class="dark-button" (click)="setCardSize(CARDSIZE.SM)" [disabled]="cardSize === CARDSIZE.SM">{{ "SMALL_SIZE" | translate }}</button>
+        <button class="dark-button" (click)="setCardSize(CARDSIZE.L)" [disabled]="cardSize === CARDSIZE.L">{{ "ORIGINAL_SIZE" | translate }}</button>
       </div>
       <div class="flex-row gap-1">
-        <button class="light-button" (click)="handleClearLocallyClick()">Clear cards</button>
+        <button class="light-button" (click)="handleClearLocallyClick()">{{ "CLEAR" | translate }}</button>
+        <button class="dark-button flex-row justify-center vertical-center gap-1" (click)="setLanguage(currentLang === 'en'? 'es': 'en')">
+          {{ "CHANGE_LANGUAGE" | translate }}
+        </button>
       </div>
     </div>
   </section>
   <section id="white-cards">
     <h2 class="print-hide flex-row vertical-center gap-1">
       <img height="24" width="24" src="assets/icons/style_outline_icon.svg" />
-      White cards
+      {{ "WHITE_CARDS" | translate}}
     </h2>
     <div class="cards-container" [ngClass]="ngClassCards" [class.new-page-after]="this.whiteCards().length > 0">
       <app-add-new-card [cardSize]="cardSize" [cardColor]="CARDCOLOR.WHITE" (addNewCard)="addWhiteCard()" />
@@ -54,7 +56,7 @@
   <section id="black-cards">
     <h2 class="print-hide flex-row vertical-center gap-1">
       <img height="24" width="24" src="assets/icons/style_filled_icon.svg" />
-      Black cards
+      {{ "BLACK_CARDS" | translate}}
     </h2>
     <div class="cards-container" [ngClass]="ngClassCards">
       <app-add-new-card [cardSize]="cardSize" [cardColor]="CARDCOLOR.BLACK" (addNewCard)="addBlackCard()" />
@@ -64,15 +66,15 @@
     </div>
   </section>
   <section id="license" class="print-hide">
-    <h2>License and warnings</h2>
-    <div class="license-warning">
-      <strong>Cards Against Humanity</strong> is a trademark of Cards Against Humanity, LLC. Cards Against Humanity is
-      distributed
-      under a Creative Commons BY-NC-SA 2.0 license.
-    </div>
-    <div class="font-warning">
-      The current web uses <strong>'Roboto'</strong> font due to Helvetica Neue license restrictions.
+    <h2>{{ "LICENSE" | translate }}</h2>
+    <div lang="en">
+      <div class="license-warning">
+        <strong>Cards Against Humanity</strong> is a trademark of Cards Against Humanity, LLC; Cards Against Humanity is
+        distributed under a Creative Commons BY-NC-SA 2.0 license.
+      </div>
+      <div class="font-warning">
+        The current web uses <strong>'Roboto'</strong> font due to Helvetica Neue license restrictions.
+      </div>
     </div>
   </section>
 </main>
-<router-outlet />

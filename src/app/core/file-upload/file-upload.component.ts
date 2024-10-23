@@ -1,11 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CardService } from '../../card.service';
-import { MatIconModule } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-file-upload',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [TranslateModule],
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.scss'
 })

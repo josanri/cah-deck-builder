@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { CardColor } from '@shared/card-color';
 import { CardSize } from '@shared/card-size';
 
 @Component({
   selector: 'app-add-new-card',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './add-new-card.component.html',
   styleUrl: './add-new-card.component.scss'
 })

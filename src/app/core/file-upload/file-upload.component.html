@@ -1,5 +1,5 @@
 <button class="dark-button flex-row justify-center vertical-center gap-1" (click)="openFilePicker()">
   <img height="24" width="24" src="assets/icons/upload_outline_icon.svg" />
-  Upload
+  {{ "UPLOAD" | translate }}
 </button>
 <input type="file" #fileInput style="display: none;" accept=".json" (change)="onFileSelected($event)" />

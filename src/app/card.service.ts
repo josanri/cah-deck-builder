@@ -1,6 +1,7 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { BLACK_CARD_DEFAULT_TEXT, Card, cardsFromArray, WHITE_CARD_DEFAULT_TEXT } from '@shared/card';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import { BLACK_CARD_DEFAULT_TEXT, Card, cardsFromArray, WHITE_CARD_DEFAULT_TEXT 
 export class CardService {
   public whiteCards = signal<Card[]>([]);
   public blackCards = signal<Card[]>([]);
+  private translateService = inject(TranslateService);
 
   constructor() {
     const localWhiteCards = localStorage.getItem("whitecards");
@@ -40,7 +42,7 @@ export class CardService {
   addExampleWhiteCard() {
     this.whiteCards.update((items) => [...items, {
       id: crypto.randomUUID(),
-      text: WHITE_CARD_DEFAULT_TEXT
+      text: this.translateService.instant(WHITE_CARD_DEFAULT_TEXT)
     }]);
     this.saveToWhiteCardsToLocalhost();
   }
@@ -48,7 +50,7 @@ export class CardService {
   addExampleBlackCard() {
     this.blackCards.update((items) => [...items, {
       id: crypto.randomUUID(),
-      text: BLACK_CARD_DEFAULT_TEXT
+      text: this.translateService.instant(BLACK_CARD_DEFAULT_TEXT)
     }]);
     this.saveToBlackCardsToLocalhost();
   }
